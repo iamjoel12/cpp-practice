@@ -1,36 +1,20 @@
 #include <iostream>
 
-    class Person{
-        int socialID;
-        std::string name;
-
+    class mathoperations{
         public:
-        //contructer
-        Person(std::string n, int id) : name(n), socialID(id){}
-        
-        //Getter for name (const is used since it does not modify the object)
-        std::string getName() const{
-            return name;
+
+        void add(int a, int b){
+            std::cout << "Integer Sum = " << a + b << std::endl;
         }
 
-        //Setter for name
-        void setName(std::string newName){
-            name = newName;
-        }
-
-        //Validate the social ID
-        bool validateID() const{
-            return (socialID >= 0 && socialID <= 1001);
+        void add(double a, double b){
+            std::cout << "Float Sum = " << a + b << std::endl;
         }
     };
 int main(){
-    Person personOne("James", 503);
+    mathoperations math;
 
-    if(!personOne.validateID()){
-        std::cout << "Invalid SocialID\n";
-    }else{
-        std::cout << "Name: " << personOne.getName() << std::endl;
-    }
-
-    return 0;
+    math.add(10 , 10);
+    
+    math.add(5.5, 4.5);
 }
